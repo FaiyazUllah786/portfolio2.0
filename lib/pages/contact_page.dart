@@ -81,7 +81,7 @@ class _ContactPageState extends State<ContactPage> {
       //     }));
 
       final url = Uri.parse(
-          'mailto:$email?subject=${Uri.encodeFull(subject)}&body:=${Uri.encodeFull(message)}');
+          'mailto:$email?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}');
       if (await canLaunchUrl(url)) {
         await launchUrl(url);
         Future.delayed(const Duration(seconds: 10)).then(
