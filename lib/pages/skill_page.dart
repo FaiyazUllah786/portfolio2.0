@@ -156,13 +156,21 @@ class _IconWidgetState extends State<IconWidget> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        if(size.width<500){
+          setState(() {
+            _isHover = !_isHover;
+          });
+        }
+      },
       onHover: (hover) {
         print(hover);
         setState(() {
           _isHover = !_isHover;
         });
       },
+
+
       child: Stack(
         children: [
           AnimatedContainer(

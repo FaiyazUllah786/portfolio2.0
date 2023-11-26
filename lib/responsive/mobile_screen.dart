@@ -47,7 +47,7 @@ class MobPage extends StatelessWidget {
         children: [
           //background animation
           const rive.RiveAnimation.asset(
-            'baloon_night.riv',
+            'assets/baloon_night.riv',
             animations: ['main', 'shooting_star'],
             fit: BoxFit.cover,
           ),
