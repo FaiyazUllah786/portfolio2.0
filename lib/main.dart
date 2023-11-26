@@ -59,6 +59,7 @@ class MyHomePage extends StatelessWidget {
     final _pageController = PageController(initialPage: 0);
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size(size.width, 50),

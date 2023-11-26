@@ -138,241 +138,239 @@ class _ContactPageState extends State<MobContactPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Flexible(
-                child: Container(
-                  alignment: Alignment.center,
-                  // width: size.width / 3,
-                  height: size.height / 2,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 2, color: Colors.white30)),
-                  child: Form(
-                      autovalidateMode: AutovalidateMode.disabled,
-                      onChanged: () {
-                        isLookUp?.value = true;
-                      },
-                      key: _formKey,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Flexible(
-                            child: TextFormField(
-                              validator: (name) {
-                                if (name == null || name.isEmpty) {
-                                  return 'please enter your name';
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: _nameController,
-                              style: const TextStyle(color: Colors.white),
-                              cursorColor: Colors.purple,
-                              maxLength: 20,
-                              decoration: InputDecoration(
-                                hoverColor: Colors.purple,
-                                counterText: '',
-                                filled: true,
-                                fillColor: Colors.transparent,
-                                labelText: 'Name',
-                                labelStyle:
-                                    const TextStyle(color: Colors.white),
-                                hintText: 'Enter Your Name',
-                                hintStyle:
-                                    const TextStyle(color: Colors.white54),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.purple),
-                                    borderRadius: BorderRadius.circular(10)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    borderRadius: BorderRadius.circular(10)),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            child: TextFormField(
-                              validator: (email) {
-                                if (email != null &&
-                                    !EmailValidator.validate(email)) {
-                                  return 'Enter a valid email';
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: _emailController,
-                              style: const TextStyle(color: Colors.white),
-                              cursorColor: Colors.purple,
-                              maxLength: 70,
-                              decoration: InputDecoration(
-                                hoverColor: Colors.purple,
-                                counterText: '',
-                                filled: true,
-                                fillColor: Colors.transparent,
-                                labelText: 'Email',
-                                labelStyle:
-                                    const TextStyle(color: Colors.white),
-                                hintText: 'eg:test@gmail.com',
-                                hintStyle:
-                                    const TextStyle(color: Colors.white54),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.purple),
-                                    borderRadius: BorderRadius.circular(10)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    borderRadius: BorderRadius.circular(10)),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            child: TextFormField(
-                              validator: (subject) {
-                                if (subject == null || subject.isEmpty) {
-                                  return 'Please enter your subject';
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: _subjectController,
-                              style: const TextStyle(color: Colors.white),
-                              cursorColor: Colors.purple,
-                              maxLength: 120,
-                              decoration: InputDecoration(
-                                hoverColor: Colors.purple,
-                                counterText: '',
-                                filled: true,
-                                fillColor: Colors.transparent,
-                                labelText: 'Subject',
-                                labelStyle:
-                                    const TextStyle(color: Colors.white),
-                                hintText: 'Enter Your Subject',
-                                hintStyle:
-                                    const TextStyle(color: Colors.white54),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.purple),
-                                    borderRadius: BorderRadius.circular(10)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    borderRadius: BorderRadius.circular(10)),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            child: TextFormField(
-                              validator: (message) {
-                                if (message == null || message.isEmpty) {
-                                  return 'Please enter your message';
-                                } else {
-                                  return null;
-                                }
-                              },
-                              controller: _messageController,
-                              maxLines: null,
-                              minLines: null,
-                              expands: true,
-                              textAlignVertical: TextAlignVertical.top,
-                              style: const TextStyle(
-                                color: Colors.white,
-                              ),
-                              cursorColor: Colors.purple,
-                              maxLength: 320,
-                              decoration: InputDecoration(
-                                hoverColor: Colors.purple,
-                                counterText: '',
-                                filled: true,
-                                fillColor: Colors.transparent,
-                                labelText: 'Message',
-                                labelStyle:
-                                    const TextStyle(color: Colors.white),
-                                hintText: 'Enter Your Messasge',
-                                hintStyle: const TextStyle(
-                                  color: Colors.white54,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.purple),
-                                    borderRadius: BorderRadius.circular(10)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.white),
-                                    borderRadius: BorderRadius.circular(10)),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.red),
-                                    borderRadius: BorderRadius.circular(10)),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                          TextButton.icon(
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.green,
-                              iconColor: Colors.white,
-                              textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                              foregroundColor: Colors.white,
-                            ),
-                            onPressed: () {
-                              final isValidForm =
-                                  _formKey.currentState!.validate();
-                              if (isValidForm) {
-                                print('working');
-                                sendEmail();
+              Container(
+                alignment: Alignment.center,
+                // width: size.width / 3,
+                height: 300,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(width: 2, color: Colors.white30)),
+                child: Form(
+                    autovalidateMode: AutovalidateMode.disabled,
+                    onChanged: () {
+                      isLookUp?.value = true;
+                    },
+                    key: _formKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: TextFormField(
+                            validator: (name) {
+                              if (name == null || name.isEmpty) {
+                                return 'please enter your name';
                               } else {
-                                print('something gone wrong..');
+                                return null;
                               }
                             },
-                            icon: const Icon(
-                              Icons.send_rounded,
-                            ),
-                            label: const Text(
-                              'Send',
+                            controller: _nameController,
+                            style: const TextStyle(color: Colors.white),
+                            cursorColor: Colors.purple,
+                            maxLength: 20,
+                            decoration: InputDecoration(
+                              hoverColor: Colors.purple,
+                              counterText: '',
+                              filled: true,
+                              fillColor: Colors.transparent,
+                              labelText: 'Name',
+                              labelStyle:
+                                  const TextStyle(color: Colors.white),
+                              hintText: 'Enter Your Name',
+                              hintStyle:
+                                  const TextStyle(color: Colors.white54),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.purple),
+                                  borderRadius: BorderRadius.circular(10)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10)),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              border: InputBorder.none,
                             ),
                           ),
-                        ],
-                      )),
-                ),
+                        ),
+                        Flexible(
+                          child: TextFormField(
+                            validator: (email) {
+                              if (email != null &&
+                                  !EmailValidator.validate(email)) {
+                                return 'Enter a valid email';
+                              } else {
+                                return null;
+                              }
+                            },
+                            controller: _emailController,
+                            style: const TextStyle(color: Colors.white),
+                            cursorColor: Colors.purple,
+                            maxLength: 70,
+                            decoration: InputDecoration(
+                              hoverColor: Colors.purple,
+                              counterText: '',
+                              filled: true,
+                              fillColor: Colors.transparent,
+                              labelText: 'Email',
+                              labelStyle:
+                                  const TextStyle(color: Colors.white),
+                              hintText: 'eg:test@gmail.com',
+                              hintStyle:
+                                  const TextStyle(color: Colors.white54),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.purple),
+                                  borderRadius: BorderRadius.circular(10)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10)),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: TextFormField(
+                            validator: (subject) {
+                              if (subject == null || subject.isEmpty) {
+                                return 'Please enter your subject';
+                              } else {
+                                return null;
+                              }
+                            },
+                            controller: _subjectController,
+                            style: const TextStyle(color: Colors.white),
+                            cursorColor: Colors.purple,
+                            maxLength: 120,
+                            decoration: InputDecoration(
+                              hoverColor: Colors.purple,
+                              counterText: '',
+                              filled: true,
+                              fillColor: Colors.transparent,
+                              labelText: 'Subject',
+                              labelStyle:
+                                  const TextStyle(color: Colors.white),
+                              hintText: 'Enter Your Subject',
+                              hintStyle:
+                                  const TextStyle(color: Colors.white54),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.purple),
+                                  borderRadius: BorderRadius.circular(10)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10)),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: TextFormField(
+                            validator: (message) {
+                              if (message == null || message.isEmpty) {
+                                return 'Please enter your message';
+                              } else {
+                                return null;
+                              }
+                            },
+                            controller: _messageController,
+                            maxLines: null,
+                            minLines: null,
+                            expands: true,
+                            textAlignVertical: TextAlignVertical.top,
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
+                            cursorColor: Colors.purple,
+                            maxLength: 320,
+                            decoration: InputDecoration(
+                              hoverColor: Colors.purple,
+                              counterText: '',
+                              filled: true,
+                              fillColor: Colors.transparent,
+                              labelText: 'Message',
+                              labelStyle:
+                                  const TextStyle(color: Colors.white),
+                              hintText: 'Enter Your Messasge',
+                              hintStyle: const TextStyle(
+                                color: Colors.white54,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.purple),
+                                  borderRadius: BorderRadius.circular(10)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(10)),
+                              errorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      const BorderSide(color: Colors.red),
+                                  borderRadius: BorderRadius.circular(10)),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                        TextButton.icon(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.green,
+                            iconColor: Colors.white,
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () {
+                            final isValidForm =
+                                _formKey.currentState!.validate();
+                            if (isValidForm) {
+                              print('working');
+                              sendEmail();
+                            } else {
+                              print('something gone wrong..');
+                            }
+                          },
+                          icon: const Icon(
+                            Icons.send_rounded,
+                          ),
+                          label: const Text(
+                            'Send',
+                          ),
+                        ),
+                      ],
+                    )),
               ),
               Flexible(
                 child: SizedBox(
