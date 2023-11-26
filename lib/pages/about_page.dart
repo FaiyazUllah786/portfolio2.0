@@ -127,7 +127,7 @@ class AboutPage extends StatelessWidget {
             ),
           ),
           Flexible(
-            child: SizedBox(height: 500, child: Lottie.asset('about.json')),
+            child: SizedBox(height: 500, child: Lottie.asset('assets/about.json')),
           )
         ],
       ),

@@ -29,7 +29,7 @@ class MobProjectPage extends StatelessWidget {
               projectName: '# Weather App',
               projectDesc:
                   'This is a Weather App.It fetch latest weather reports of your location.You can also find weather reports of your desired cities.This app shows weather data beautifully along with city known images',
-              projectImage: 'projectImages/weather.jpg',
+              projectImage: 'assets/projectImages/weather.jpg',
               githubLink:
                   'https://github.com/FaiyazUllah786/heyflutter_contest_weatherApp'),
           ProjectWidget(
@@ -37,14 +37,14 @@ class MobProjectPage extends StatelessWidget {
               projectName: '# Currency Converter App',
               projectDesc:
                   'It is a Currency Converter app that use OpenExchange Api to fetch latest currency rate.You can find every countries currency rates in this app and get your calcuted converted amount based on your query.  ',
-              projectImage: 'projectImages/currencyConverter.jpg',
+              projectImage: 'assets/projectImages/currencyConverter.jpg',
               githubLink: 'https://github.com/FaiyazUllah786/codsoft_task3'),
           ProjectWidget(
             controller: _pageController,
             projectName: '# Chat App',
             projectDesc:
                 'This Project is started as a WhatsApp clone.Now in this project I am currently trying to changing app ui and give some extra functionality such as More customization on themes,In-app file explorer,Material 3 UI etc. \n This Project is Under Development.Currently this project is private on github,i will change this to public Keep Learning everyone..... ',
-            projectImage: 'projectImages/whatsapp.jpg',
+            projectImage: 'assets/projectImages/whatsapp.jpg',
             githubLink: '',
           ),
         ],
@@ -133,7 +133,7 @@ class ProjectWidget extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CustomButton(
-                            lottie: 'github.json',
+                            lottie: 'assets/github.json',
                             label: 'Source Code',
                             githubUrl: githubLink,
                             controller: controller,
@@ -141,7 +141,7 @@ class ProjectWidget extends StatelessWidget {
                           const SizedBox(width: 10),
                           CustomButton(
                             controller: controller,
-                            lottie: 'arrowRightCircle.json',
+                            lottie: 'assets/arrowRightCircle.json',
                             label: 'More',
                             btnColor: Colors.blue.shade700,
                             githubUrl: '',

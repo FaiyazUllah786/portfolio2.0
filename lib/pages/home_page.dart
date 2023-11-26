@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                               elevation: 10,
                             ),
                             onPressed: () {
-                              downloadFile('faiyaz.pdf');
+                              downloadFile('assets/faiyaz.pdf');
                             },
                             icon: const Icon(Icons.download_sharp),
                             label: const Text(
@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
               height: 350,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  image: DecorationImage(image: AssetImage('icons/boy.png'))),
+                  image: DecorationImage(image: AssetImage('assets/icons/boy.png'))),
             ),
           )
         ],

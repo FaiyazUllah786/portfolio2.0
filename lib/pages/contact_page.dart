@@ -23,7 +23,7 @@ class _ContactPageState extends State<ContactPage> {
   @override
   void initState() {
     super.initState();
-    rootBundle.load('flutter_bird.riv').then((data) async {
+    rootBundle.load('assets/flutter_bird.riv').then((data) async {
       try {
         final file = RiveFile.import(data);
         final artboard = file.mainArtboard;

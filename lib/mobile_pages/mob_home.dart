@@ -28,11 +28,11 @@ class MobHomePage extends StatelessWidget {
             Flexible(
               flex: 2,
               child: Container(
-                padding: EdgeInsets.all(50),
+                padding: const EdgeInsets.all(50),
                 height: 250,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(image: AssetImage('icons/boy.png'))),
+                    image: DecorationImage(image: AssetImage('assets/icons/boy.png'))),
               ),
             ),
             const Text(
@@ -54,7 +54,7 @@ class MobHomePage extends StatelessWidget {
                         ..shader = const LinearGradient(colors: [
                           Color(0xff7071E8),
                           Color(0xffFFC7C7),
-                        ]).createShader(Rect.fromLTWH(0, 0, 1500, 0)),
+                        ]).createShader(const Rect.fromLTWH(0, 0, 1500, 0)),
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -106,7 +106,7 @@ class MobHomePage extends StatelessWidget {
                         elevation: 10,
                       ),
                       onPressed: () {
-                        downloadFile('faiyaz.pdf');
+                        downloadFile('assets/faiyaz.pdf');
                       },
                       icon: const Icon(Icons.download_sharp),
                       label: const Text(

@@ -23,7 +23,7 @@ class _ContactPageState extends State<MobContactPage> {
   @override
   void initState() {
     super.initState();
-    rootBundle.load('flutter_bird.riv').then((data) async {
+    rootBundle.load('assets/flutter_bird.riv').then((data) async {
       try {
         final file = RiveFile.import(data);
         final artboard = file.mainArtboard;
@@ -97,7 +97,7 @@ class _ContactPageState extends State<MobContactPage> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               backgroundColor: Colors.black,
-              content: Text('Sending Mail...'),
+              content: const Text('Sending Mail...'),
               // width: 200,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(
@@ -366,7 +366,7 @@ class _ContactPageState extends State<MobContactPage> {
                             icon: const Icon(
                               Icons.send_rounded,
                             ),
-                            label: Text(
+                            label: const Text(
                               'Send',
                             ),
                           ),
