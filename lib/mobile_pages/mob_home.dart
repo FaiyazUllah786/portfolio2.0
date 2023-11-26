@@ -2,6 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
+import 'package:url_launcher/url_launcher.dart';
+
 class MobHomePage extends StatelessWidget {
   const MobHomePage({
     super.key,
@@ -105,8 +107,12 @@ class MobHomePage extends StatelessWidget {
                         backgroundColor: Colors.purple.shade400,
                         elevation: 10,
                       ),
-                      onPressed: () {
-                        downloadFile('assets/faiyaz.pdf');
+                      onPressed: () async{
+                        // downloadFile('assets/faiyaz.pdf');
+                        var url = Uri.parse('https://drive.google.com/file/d/1TcT82H6wj1zQIQbWLXwgEA2q_-CAedcu/view?usp=sharing');
+                        if(await canLaunchUrl(url)){
+                        await launchUrl(url);
+                        }
                       },
                       icon: const Icon(Icons.download_sharp),
                       label: const Text(

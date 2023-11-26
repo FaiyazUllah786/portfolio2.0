@@ -38,7 +38,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 height: 150,
                 decoration:const BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(image: AssetImage('icons/boy.png'))),
+                    image: DecorationImage(image: AssetImage('assets/icons/boy.png'))),
               ),
             ),
             SizedBox(
